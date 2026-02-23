@@ -37,7 +37,7 @@ export async function POST(req: NextRequest) {
       const existingEmail = await getUserEmails(subscriber.id);
 
       const filteredEmail = existingEmail.filter(
-        (a) => a.email === emailId && a.subscriber_id === subscriber.id,
+        (a) => a.id === emailId && a.subscriber_id === subscriber.id,
       );
 
       if (!filteredEmail) {
